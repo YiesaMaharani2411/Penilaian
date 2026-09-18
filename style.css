@@ -1,0 +1,1490 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+:root {
+
+    --bg: #090a18;
+
+    --text: #f5f2ff;
+
+    --muted: #aaa7bd;
+
+    --pink: #ff72c8;
+
+    --soft: #dca4ff;
+
+    --purple: #9d7cff;
+
+    --line: rgba(255,255,255,.10);
+
+    --glass: rgba(255,255,255,.055);
+
+}
+
+
+/* RESET */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255,114,200,.08),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(157,124,255,.08),
+            transparent 25%
+        ),
+
+        var(--bg);
+
+    color: var(--text);
+
+    font-family: "DM Sans", sans-serif;
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    overflow: hidden;
+
+}
+
+
+.glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(75px);
+
+    opacity: .22;
+
+    animation: float 10s ease-in-out infinite alternate;
+
+}
+
+
+.glow-1 {
+
+    width: 320px;
+
+    height: 320px;
+
+    background: #ff72c8;
+
+    left: -100px;
+
+    top: 15%;
+
+}
+
+
+.glow-2 {
+
+    width: 360px;
+
+    height: 360px;
+
+    background: #8067ff;
+
+    right: -130px;
+
+    top: 42%;
+
+    animation-delay: -3s;
+
+}
+
+
+.glow-3 {
+
+    width: 250px;
+
+    height: 250px;
+
+    background: #dca4ff;
+
+    left: 42%;
+
+    bottom: -100px;
+
+}
+
+
+@keyframes float {
+
+    to {
+
+        transform:
+            translate(30px,-35px)
+            scale(1.12);
+
+    }
+
+}
+
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 18px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1120px, calc(100% - 32px));
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 14px 20px;
+
+    background: rgba(9,10,24,.68);
+
+    border: 1px solid var(--line);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(18px);
+
+    z-index: 100;
+
+}
+
+
+.logo {
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.logo span {
+
+    color: var(--pink);
+
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 24px;
+
+}
+
+
+nav a {
+
+    color: var(--muted);
+
+    font-size: .9rem;
+
+    transition: .3s;
+
+}
+
+
+nav a:hover {
+
+    color: var(--pink);
+
+}
+
+
+.menu-toggle {
+
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+}
+
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+
+    width: min(
+        1120px,
+        calc(100% - 32px)
+    );
+
+    margin: auto;
+
+    padding: 110px 0;
+
+}
+
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    padding-top: 150px;
+
+}
+
+
+.eyebrow {
+
+    color: var(--soft);
+
+    font-size: .78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.hero h1 {
+
+    font:
+
+        600 clamp(
+            3.5rem,
+            8vw,
+            6.5rem
+        )
+
+        / 1
+
+        "Playfair Display",
+        serif;
+
+    margin-bottom: 12px;
+
+}
+
+
+.hero h1 span {
+
+    color: var(--pink);
+
+}
+
+
+.hero h2 {
+
+    color: var(--soft);
+
+    min-height: 38px;
+
+    font-size: 1.35rem;
+
+}
+
+
+.cursor {
+
+    animation: blink .8s infinite;
+
+}
+
+
+@keyframes blink {
+
+    50% {
+
+        opacity: 0;
+
+    }
+
+}
+
+
+.hero-description {
+
+    max-width: 600px;
+
+    color: var(--muted);
+
+    margin: 22px 0 30px;
+
+}
+
+
+.buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.btn {
+
+    padding: 12px 20px;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+
+.primary {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(255,114,200,.18);
+
+}
+
+
+.secondary {
+
+    border: 1px solid var(--line);
+
+    background: var(--glass);
+
+}
+
+
+.btn:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+
+/* =========================
+   FOTO
+========================= */
+
+.hero-photo {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.photo-frame {
+
+    width: min(370px,80vw);
+
+    aspect-ratio: 4 / 5;
+
+    padding: 10px;
+
+    border: 1px solid
+        rgba(255,255,255,.16);
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,114,200,.15),
+            rgba(157,124,255,.06)
+        );
+
+    box-shadow:
+        0 0 70px
+        rgba(255,114,200,.12);
+
+    transform: rotate(2deg);
+
+}
+
+
+.photo-placeholder,
+.gallery-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,114,200,.15),
+            rgba(157,124,255,.15)
+        ),
+
+        rgba(255,255,255,.04);
+
+    border: 1px dashed
+        rgba(255,255,255,.2);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: var(--soft);
+
+}
+
+
+.photo-placeholder small,
+.gallery-placeholder small {
+
+    color: var(--muted);
+
+    margin-top: 5px;
+
+}
+
+
+.floating-card {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 5%;
+
+    padding: 12px 18px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 14px;
+
+    background:
+        rgba(15,16,38,.72);
+
+    backdrop-filter: blur(14px);
+
+    animation:
+        bob 3s ease-in-out infinite;
+
+}
+
+
+@keyframes bob {
+
+    50% {
+
+        transform:
+            translateY(-10px);
+
+    }
+
+}
+
+
+
+/* =========================
+   HEADING
+========================= */
+
+.heading {
+
+    margin-bottom: 40px;
+
+}
+
+
+.heading h2 {
+
+    font:
+
+        600 clamp(
+            2.3rem,
+            5vw,
+            3.5rem
+        )
+
+        / 1.1
+
+        "Playfair Display",
+        serif;
+
+}
+
+
+.heading h2 span {
+
+    color: var(--pink);
+
+}
+
+
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.grid2 {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 22px;
+
+}
+
+
+.glass,
+.mini,
+.portfolio-card,
+.skill {
+
+    background: var(--glass);
+
+    border: 1px solid var(--line);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.25);
+
+}
+
+
+.glass {
+
+    padding: 30px;
+
+}
+
+
+.glass h3 {
+
+    font-size: 1.3rem;
+
+    margin-bottom: 20px;
+
+}
+
+
+.glass p,
+.mini p,
+.portfolio-card p {
+
+    color: var(--muted);
+
+}
+
+
+
+/* =========================
+   BIODATA
+========================= */
+
+.info {
+
+    display: grid;
+
+    gap: 12px;
+
+}
+
+
+.info div {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-bottom: 10px;
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.info span {
+
+    color: var(--muted);
+
+}
+
+
+.quote {
+
+    color: var(--soft) !important;
+
+    font:
+
+        1.2rem
+        "Playfair Display",
+        serif;
+
+    margin-bottom: 18px;
+
+}
+
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.gallery-box {
+
+    width: min(650px,100%);
+
+    padding: 10px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,114,200,.13),
+            rgba(157,124,255,.1)
+        );
+
+    border:
+        1px solid var(--line);
+
+}
+
+
+.gallery-placeholder {
+
+    min-height: 400px;
+
+}
+
+
+.gallery-box > p {
+
+    text-align: center;
+
+    color: var(--muted);
+
+    padding: 12px;
+
+}
+
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    position: relative;
+
+}
+
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 9px;
+
+    top: 5px;
+
+    bottom: 5px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            var(--pink),
+            var(--purple),
+            transparent
+        );
+
+}
+
+
+.timeline-item {
+
+    position: relative;
+
+    padding-left: 45px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.timeline-item i {
+
+    position: absolute;
+
+    left: 3px;
+
+    top: 30px;
+
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: var(--pink);
+
+    box-shadow:
+        0 0 18px var(--pink);
+
+}
+
+
+.timeline-item .glass {
+
+    padding: 22px 25px;
+
+}
+
+
+.timeline-item small,
+.organization small {
+
+    color: var(--soft);
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+/* =========================
+   ORGANISASI
+========================= */
+
+.organization {
+
+    display: flex;
+
+    gap: 25px;
+
+    align-items: center;
+
+    max-width: 800px;
+
+    margin: auto;
+
+}
+
+
+.org-icon {
+
+    min-width: 70px;
+
+    height: 70px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255,114,200,.1);
+
+    color: var(--pink);
+
+    font-size: 2rem;
+
+}
+
+
+
+/* =========================
+   KELEBIHAN
+========================= */
+
+.stack {
+
+    display: grid;
+
+    gap: 15px;
+
+}
+
+
+.mini {
+
+    padding: 18px;
+
+    display: flex;
+
+    gap: 18px;
+
+}
+
+
+.mini > b {
+
+    color: var(--pink);
+
+}
+
+
+.mini h3 {
+
+    margin-bottom: 3px;
+
+    font-size: 1rem;
+
+}
+
+
+
+/* =========================
+   PRESTASI
+========================= */
+
+.achievement {
+
+    text-align: center;
+
+    min-height: 250px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.trophy {
+
+    font-size: 3rem;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 18px;
+
+}
+
+
+.skill {
+
+    padding: 22px;
+
+}
+
+
+.skill > b {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+}
+
+
+.skill-bar {
+
+    height: 7px;
+
+    border-radius: 99px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    overflow: hidden;
+
+}
+
+
+.skill-bar i {
+
+    display: block;
+
+    width: var(--level);
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            var(--purple)
+        );
+
+    border-radius: inherit;
+
+    animation:
+        grow 1.5s ease;
+
+}
+
+
+@keyframes grow {
+
+    from {
+
+        transform: scaleX(0);
+
+        transform-origin: left;
+
+    }
+
+}
+
+
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 18px;
+
+}
+
+
+.portfolio-card {
+
+    padding: 30px;
+
+    min-height: 300px;
+
+    transition: .35s;
+
+}
+
+
+.portfolio-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(255,114,200,.35);
+
+}
+
+
+.portfolio-card > div {
+
+    font-size: 2rem;
+
+    margin:
+        22px 0 12px;
+
+}
+
+
+.portfolio-card em {
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 5px 11px;
+
+    border-radius: 99px;
+
+    background:
+        rgba(255,114,200,.09);
+
+    color: var(--soft);
+
+    font-size: .75rem;
+
+    font-style: normal;
+
+}
+
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        .8s;
+
+}
+
+
+.reveal.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding:
+        45px 20px 60px;
+
+    border-top:
+        1px solid var(--line);
+
+    color: var(--muted);
+
+}
+
+
+footer span {
+
+    color: var(--pink);
+
+}
+
+
+
+/* =========================
+   TOP BUTTON
+========================= */
+
+#topButton {
+
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 50%;
+
+    background:
+        rgba(15,16,38,.75);
+
+    color: white;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .3s;
+
+}
+
+
+#topButton.visible {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px) {
+
+    .hero,
+    .grid2 {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .hero {
+
+        gap: 45px;
+
+    }
+
+
+    .hero-photo {
+
+        order: -1;
+
+    }
+
+
+    .portfolio {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .menu-toggle {
+
+        display: block;
+
+    }
+
+
+    nav {
+
+        position: absolute;
+
+        top: calc(100% + 8px);
+
+        left: 0;
+
+        right: 0;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 15px;
+
+        border:
+            1px solid var(--line);
+
+        border-radius: 16px;
+
+        background:
+            rgba(9,10,24,.92);
+
+        backdrop-filter:
+            blur(18px);
+
+    }
+
+
+    nav.open {
+
+        display: flex;
+
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .section {
+
+        padding: 80px 0;
+
+    }
+
+
+    .skills {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .info div {
+
+        flex-direction: column;
+
+        gap: 0;
+
+    }
+
+}
+/* =========================
+   HOVER KOMPETENSI
+========================== */
+
+.skill {
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.skill:hover {
+    transform: scale(1.025);
+    border-color: rgba(255, 114, 200, 0.35);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(255, 114, 200, 0.08);
+}
+/* =========================
+   GLOBAL HOVER EFFECT
+========================== */
+
+/* Semua kartu */
+.glass,
+.mini,
+.skill,
+.gallery-box,
+.organization,
+.achievement,
+.portfolio-card {
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Saat kursor diarahkan ke kartu */
+.glass:hover,
+.mini:hover,
+.skill:hover,
+.gallery-box:hover,
+.organization:hover,
+.achievement:hover {
+    transform: scale(1.025);
+
+    border-color: rgba(255, 114, 200, 0.35);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(255, 114, 200, 0.08);
+}
+
+
+/* Portfolio efek */
+.portfolio-card:hover {
+    transform: translateY(-8px) scale(1.025);
+
+    border-color: rgba(255, 114, 200, 0.35);
+
+    box-shadow:
+        0 25px 65px rgba(0, 0, 0, 0.3),
+        0 0 25px rgba(255, 114, 200, 0.08);
+}
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+}
+.gallery-box img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+}
+/* FOTO HALAMAN AWAL */
+.photo-frame img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+
+    /* Animasi muncul */
+    animation: photoAppear 1.5s ease forwards,
+               floating 5s ease-in-out infinite;
+
+    transition: transform 0.4s ease;
+}
+
+/* Saat diarahkan */
+.photo-frame:hover img{
+    transform: scale(1.03);
+}
+
+/* Fade + naik */
+@keyframes photoAppear{
+    from{
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Efek melayang */
+@keyframes floating{
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-8px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+/* Animasi gelembung */
+.photo-frame::before,
+.photo-frame::after {
+    animation: bubbleMove 5s ease-in-out infinite;
+}
+
+@keyframes bubbleMove {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(12px, -15px) scale(1.08);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
